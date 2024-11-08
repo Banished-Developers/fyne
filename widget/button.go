@@ -196,6 +196,8 @@ func (b *Button) Tapped(*fyne.PointEvent) {
 	b.tapAnimation()
 	b.Refresh()
 
+	fmt.Printf("Button Clicked: %s\n", label)
+
 	if onTapped := b.OnTapped; onTapped != nil {
 		onTapped()
 	}
