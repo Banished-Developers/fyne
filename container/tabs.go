@@ -1,7 +1,6 @@
 package container
 
 import (
-	"fmt"
 	"sync"
 
 	"fyne.io/fyne/v2"
@@ -798,7 +797,6 @@ func (b *tabCloseButton) MouseOut() {
 }
 
 func (b *tabCloseButton) Tapped(*fyne.PointEvent) {
-	fmt.Printf("Tab Button Clicked: %s\n", b.Text)
 	b.onTapped()
 }
 
