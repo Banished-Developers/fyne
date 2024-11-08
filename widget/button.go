@@ -59,7 +59,6 @@ type Button struct {
 	Alignment     ButtonAlign
 	IconPlacement ButtonIconPlacement
 
-	onTapped func() `json:"-"`
 	OnTapped func() `json:"-"`
 
 	hovered, focused bool
@@ -71,10 +70,6 @@ func NewButton(label string, tapped func()) *Button {
 	button := &Button{
 		Text:     label,
 		OnTapped: tapped,
-	}
-	button.onTapped = func() {
-		fmt.Printf("Button Clicked: %s\n", button.label)
-		button.OnTapped()
 	}
 
 	button.ExtendBaseWidget(button)
