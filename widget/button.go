@@ -1,6 +1,8 @@
 package widget
 
 import (
+	"fmt"
+	
 	"image/color"
 
 	"fyne.io/fyne/v2"
@@ -191,7 +193,7 @@ func (b *Button) Tapped(*fyne.PointEvent) {
 	b.tapAnimation()
 	b.Refresh()
 
-	fmt.Printf("Button Clicked: %s\n", label)
+	fmt.Printf("Button Clicked: %s\n", b.Text)
 
 	if onTapped := b.OnTapped; onTapped != nil {
 		onTapped()
